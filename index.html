@@ -169,7 +169,83 @@ section{
 .section-title span{
     color:var(--green);
 }
+    
+/* FUNDADORES */
 
+.founders-section{
+    background:#111111;
+}
+
+.founders-carousel{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.founders-track{
+    display:flex;
+    transition:transform .5s ease;
+}
+
+.founder-card{
+    min-width:100%;
+    background:#171717;
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+}
+
+.founder-card img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #57B61F;
+    margin-bottom:20px;
+}
+
+.founder-card h3{
+    color:#57B61F;
+    margin-bottom:10px;
+    font-size:1.8rem;
+}
+
+.founder-card h4{
+    color:#ccc;
+    margin-bottom:20px;
+    font-weight:400;
+}
+
+.founder-card p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    color:#ddd;
+}
+
+.carousel-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:25px;
+}
+
+.carousel-buttons button{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#57B61F;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.carousel-buttons button:hover{
+    transform:scale(1.1);
+}
 /* STATS */
 
 .stats-grid{
@@ -525,7 +601,58 @@ Comportamiento e <span>Incremento</span>
 </div>
 
 </section>
+<!-- FUNDADORES -->
+<section class="founders-section" id="founders">
 
+<div class="container">
+
+<h2 class="section-title">
+Nuestros <span>Fundadores</span>
+</h2>
+
+<div class="founders-carousel">
+    <div class="founders-track" id="foundersTrack">
+        <!-- FUNDADOR 1 -->
+        <div class="founder-card">
+            <img src="fundador1.jpg" alt="Fundador 1">
+            <h3>Sapiens eliecer</h3>
+            <h4>CEO & Co-Founder</h4>
+            <p>
+                Especialista en Blockchain .....
+            </p>
+        </div>
+        <!-- FUNDADOR 2 -->
+        <div class="founder-card">
+            <img src="fundador2.jpg" alt="Fundador 2">
+            <h3>Jhon Lopez</h3>
+            <h4>Miembro & help-Founder</h4>
+            <p>
+                Agromonomo especializado en canabis y su uso medicinal
+            </p>
+        </div>
+        
+        <!-- FUNDADOR 3 -->
+        <div class="founder-card">
+            <img src="fundador3.jpg" alt="Fundador 3">
+            <h3>Jhon espinoza</h3>
+            <h4>Miembro </h4>
+            <p>
+                Especialista en Setas y su uso medicinal para enfermedades.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="carousel-buttons">
+    <button onclick="prevFounder()">
+        &#10094;
+    </button>
+    <button onclick="nextFounder()">
+        &#10095;
+    </button>
+</div>
+</div>
+</section>
+    
 <!-- CONTACTO -->
 
 <section id="contacto">
