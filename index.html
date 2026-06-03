@@ -735,35 +735,31 @@ Nuestas <span> Historias </span>
     new Chart(ctx, {
         type: 'line',
         data: {
-        labels: ['2 April','3 April','4 April','1 May','2 May','3 May','4 May'],
-        datasets: [{
-            label: 'Valor CHI ',
-            data: [33,41,47,68.5,70.33,68.28,95.1],
-            borderColor:'#57B61F',
-            backgroundColor:'rgba(87,182,31,.2)',
-            fill:true,
-            tension:0.4
-        }]
-    },
-    
-    options:{responsive:true,
-        plugins:{
-            legend:{
-                labels:{
-                    color:'#fff'
-                }
-            }
+            labels: ['2 April','3 April','4 April','1 May','2 May','3 May','4 May'],
+            datasets: [{
+                label: 'Valor CHI ',
+                data: [33,41,47,68.5,70.33,68.28,95.1],
+                borderColor:'#57B61F',
+                backgroundColor:'rgba(87,182,31,.2)',
+                fill:true,
+                tension:0.4
+            }]
         },
-        
-        scales:{
-            x:{ticks:{color:'#fff'}},
-            y:{ticks:{color:'#fff'}}
+        options:{responsive:true,
+            plugins:{
+                legend:{
+                    labels:{color:'#fff'}
+                }
+            },
+            scales:{
+                x:{ticks:{color:'#fff'}},
+                y:{ticks:{color:'#fff'}}
+            }
         }
-    }
-});
-    // Carrusel de fundadores
+    });
+    
     let i = 0;
-    const track = document.getElementById('track');
+    const track = document.getElementById('founders-track');
     const total = 3;
     function show(){
         track.style.transform =
