@@ -761,6 +761,26 @@ Nuestas <span> Historias </span>
         }
     }
 });
+    // Carrusel de fundadores
+    let i = 0;
+    const track = document.getElementById('track');
+    const total = 3;
+    function show(){
+        track.style.transform =
+        `translateX(-${i * 100}%)`;
+    
+        track.style.transition =
+        '0.5s';
+    }
+    function nextFounder(){
+        i = (i + 1) % total;
+        show();
+    }
+    function prevFounder(){
+        i = (i - 1 + total) % total;
+        show();
+    }
+    setInterval(nextFounder,5000);
 </script>
 
 </body>
