@@ -979,7 +979,7 @@
             new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['Semana 1','Semana 2','Semana 3','Semana 4','Semana 5','Semana 6','Semana 7','Semana 8','Semana 9','Semana 10'],
+                    labels: ['1','2','3','4','5','6','7','8','9','10'],
                     datasets: [{
                         label: 'Valor ᚲᚺᛁ ',
                         data: [33,41,47,68.5,70.33,68.28,95.1,98.17,95.85,94],
@@ -996,8 +996,24 @@
                         }
                     },
                     scales:{
-                        x:{ticks:{color:'#fff'}},
-                        y:{ticks:{color:'#fff'}}
+                        x:{
+                            ticks:{color:'#fff'},
+                            title:{
+                                display:true,
+                                text:'Semana',
+                                color:'#888',
+                                font:{ size:13 }
+                            }
+                        },
+                        y:{
+                            ticks:{color:'#fff'},
+                            title:{
+                                display:true,
+                                text:'Valor en COP',
+                                color:'#888',
+                                font:{ size:13 }
+                            }
+                        }
                     }
                 }
             });
