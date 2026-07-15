@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ᚲᚺᛁ | Comercios Aliados</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+:root{
+    --green:#57B61F;
+    --green-light:#6dd629;
+    --black:#0B0B0B;
+    --dark:#111111;
+    --card:#171717;
+    --white:#ffffff;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+html{ scroll-behavior:smooth; }
+body{ background:var(--black); color:white; }
+
+/* HEADER */
+header{
+    position:fixed; width:100%; top:0; z-index:1000;
+    background:rgba(0,0,0,.90); backdrop-filter:blur(10px);
+}
+.container{ width:90%; max-width:1200px; margin:auto; }
+.navbar{ display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
+.logo{ display:flex; align-items:center; gap:15px; }
+.logo img{ width:55px; }
+.logo h2{ color:var(--green); }
+nav ul{ list-style:none; display:flex; gap:25px; }
+nav a{ color:white; text-decoration:none; transition:.3s; }
+nav a:hover{ color:var(--green); }
+nav a.active{ color:var(--green); }
+
+/* HERO */
+.page-hero{
+    padding:150px 0 70px; text-align:center;
+    background:radial-gradient(circle at 50% 0%, rgba(87,182,31,.18), transparent 55%);
+    border-bottom:1px solid #1c1c1c;
+}
+.eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--green); font-size:.75rem; letter-spacing:.16em;
+    text-transform:uppercase; font-weight:600; margin-bottom:16px;
+}
+.eyebrow::before{
+    content:""; width:7px; height:7px; border-radius:50%;
+    background:var(--green); box-shadow:0 0 10px var(--green);
+}
+.page-hero h1{
+    font-family:'Fraunces',serif; font-size:3.2rem; line-height:1.15;
+    max-width:750px; margin:0 auto 16px;
+}
+.page-hero h1 span{ color:var(--green); font-style:italic; }
+.page-hero p{ color:#b9b9b9; max-width:540px; margin:0 auto 40px; font-size:1rem; }
+.hero-stats{ display:flex; justify-content:center; gap:50px; flex-wrap:wrap; }
+.hero-stat strong{ display:block; font-family:'Fraunces',serif; font-size:2rem; color:var(--green); }
+.hero-stat span{ color:#888; font-size:.85rem; }
+
+/* BUSCADOR */
+.search-bar-wrap{ padding:50px 0 10px; }
+.search-bar{
+    display:flex; align-items:center; gap:12px;
+    background:var(--card); border:1px solid #2a2a2a;
+    border-radius:50px; padding:14px 24px;
+    max-width:520px; margin:0 auto; transition:.3s;
+}
+.search-bar:focus-within{ border-color:var(--green); }
+.search-bar i{ color:#666; font-size:1rem; }
+.search-bar input{
+    background:none; border:none; outline:none;
+    color:white; font-family:'Poppins',sans-serif; font-size:.95rem; width:100%;
+}
+.search-bar input::placeholder{ color:#555; }
+
+/* GRID COMERCIOS */
+.comercios-section{ padding:60px 0 100px; }
+.comercios-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
+    gap:28px;
+}
+
+/* TARJETA COMERCIO */
+.comercio-card{
+    background:var(--card);
+    border:1px solid #232323;
+    border-radius:22px;
+    overflow:hidden;
+    transition:.35s;
+    display:flex;
+    flex-direction:column;
+}
+.comercio-card:hover{
+    border-color:var(--green);
+    box-shadow:0 16px 40px rgba(0,0,0,.5);
+}
+
+/* BANNER + LOGO */
+.comercio-banner{
+    height:100px;
+    display:flex; align-items:flex-end;
+    padding:0 24px 0;
+    position:relative;
+}
+.banner-logo-row{
+    display:flex; align-items:flex-end; gap:14px;
+    position:absolute; bottom:-28px; left:24px;
+}
+.comercio-logo{
+    width:64px; height:64px; border-radius:14px;
+    object-fit:cover; border:3px solid var(--card);
+    background:#222; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.6rem; color:var(--green);
+    overflow:hidden;
+}
+.comercio-logo img{ width:100%; height:100%; object-fit:cover; }
+.banner-name{
+    /* nombre del comercio visible cerca al logo */
+    font-weight:700; font-size:1.05rem;
+    text-shadow:0 2px 8px rgba(0,0,0,.8);
+    padding-bottom:4px;
+    line-height:1.2;
+}
+.banner-category{
+    font-size:.7rem; color:var(--green);
+    font-weight:600; text-transform:uppercase;
+    letter-spacing:.1em; text-shadow:0 1px 4px rgba(0,0,0,.8);
+}
+
+/* CUERPO */
+.comercio-body{ padding:44px 24px 24px; flex:1; display:flex; flex-direction:column; }
+.comercio-desc{ color:#aaa; font-size:.87rem; line-height:1.6; margin-bottom:20px; }
+
+/* PRODUCTOS */
+.productos-header{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:12px;
+}
+.productos-title{
+    font-size:.72rem; text-transform:uppercase;
+    letter-spacing:.12em; color:#555; font-weight:600;
+}
+.toggle-productos{
+    background:none; border:1px solid #2a2a2a; color:#888;
+    border-radius:50px; padding:5px 14px; font-size:.75rem;
+    cursor:pointer; transition:.25s; font-family:'Poppins',sans-serif;
+    display:flex; align-items:center; gap:6px;
+}
+.toggle-productos:hover{ border-color:var(--green); color:var(--green); }
+
+/* lista colapsable de productos */
+.productos-list{
+    list-style:none;
+    display:flex; flex-direction:column; gap:0;
+    overflow:hidden;
+    max-height:0;
+    transition:max-height .45s ease, opacity .35s ease;
+    opacity:0;
+}
+.productos-list.open{
+    max-height:2000px;
+    opacity:1;
+}
+
+/* cada producto */
+.prod-item{
+    display:grid;
+    gap:12px;
+    align-items:start;
+    padding:12px 0;
+    border-bottom:1px solid #1f1f1f;
+}
+.prod-item:last-child{ border-bottom:none; }
+
+
+.prod-info{ display:flex; flex-direction:column; gap:4px; }
+.prod-name{ font-weight:600; font-size:.9rem; color:white; }
+.prod-desc{ color:#888; font-size:.78rem; line-height:1.5; }
+.prod-price{
+    color:var(--green); font-weight:700; font-size:.9rem;
+    margin-top:4px; display:flex; align-items:center; gap:5px;
+}
+.prod-price .chi-label{
+    font-size:.7rem; color:#555; font-weight:400;
+}
+
+/* PIE */
+.comercio-footer{
+    border-top:1px solid #222; padding-top:18px; margin-top:20px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px; flex-wrap:wrap;
+}
+.chi-tag{ display:flex; align-items:center; gap:6px; font-size:.78rem; color:#666; }
+.chi-tag span{ color:var(--green); font-weight:600; }
+.btn-wa{
+    display:inline-flex; align-items:center; gap:8px;
+    background:#25D366; color:white; text-decoration:none;
+    padding:10px 20px; border-radius:50px;
+    font-size:.85rem; font-weight:600; transition:.3s; white-space:nowrap;
+}
+.btn-wa:hover{ transform:translateY(-2px); background:#1ebe5a; }
+
+/* COLORES DE BANNER */
+.banner-1{ background:linear-gradient(135deg,#1a2a10,#2d4a1a); }
+.banner-2{ background:linear-gradient(135deg,#0d1f2d,#1a3a4a); }
+.banner-3{ background:linear-gradient(135deg,#2a1a0d,#4a2d10); }
+.banner-4{ background:linear-gradient(135deg,#1a0d2a,#2d1a4a); }
+.banner-5{ background:linear-gradient(135deg,#0d2a1a,#1a4a2d); }
+.banner-6{ background:linear-gradient(135deg,#2a0d0d,#4a1a1a); }
+.banner-7{ background:linear-gradient(135deg,#0d0d2a,#1a1a4a); }
+
+/* FOOTER */
+footer{ padding:40px; text-align:center; border-top:1px solid #222; }
+footer p{ color:#888; }
+
+/* FLOTANTE */
+.floating-whatsapp{
+    position:fixed; right:25px; bottom:20px;
+    width:60px; height:60px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:white; text-decoration:none; font-size:28px;
+    z-index:9999; background:#25D366;
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    nav{ display:none; }
+    .page-hero h1{ font-size:2.2rem; }
+    .hero-stats{ gap:30px; }
+    .comercios-grid{ grid-template-columns:1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+    <div class="logo">
+        <img src="chi_logo.png" alt="ᚲᚺᛁ">
+        <h2>ᚲᚺᛁ</h2>
+    </div>
+    <nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#about">Quiénes Somos</a></li>
+        <li><a href="index.html#market">Mercado</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="comercios.html" class="active">Comercios</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    </nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+<div class="container">
+    <span class="eyebrow">Red de comercios</span>
+    <h1>Comercios <span>aliados</span> a la comunidad</h1>
+    <p>Negocios reales que aceptan ᚲᚺᛁ. Compra, intercambia y apoya
+    a quienes construyen la economía circular de nuestra comunidad.</p>
+    <div class="hero-stats">
+        <div class="hero-stat"><strong>7+</strong><span>Comercios aliados</span></div>
+        <div class="hero-stat"><strong>ᚲᚺᛁ</strong><span>Moneda aceptada</span></div>
+        <div class="hero-stat"><strong>100%</strong><span>Comunidad local</span></div>
+    </div>
+</div>
+</section>
+
+<!-- BUSCADOR -->
+<div class="container search-bar-wrap">
+    <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar comercio o producto..." id="searchInput">
+    </div>
+</div>
+
+<!-- GRID -->
+<section class="comercios-section">
+<div class="container">
+<div class="comercios-grid" id="comerciosGrid">
+
+
+<!-- ========================= COMERCIO 1 ========================= -->
+<!--
+    CÓMO EDITAR ESTA TARJETA:
+    - banner-1 a banner-7: cambia el color de fondo del encabezado
+    - comercio-logo: reemplaza el ícono por <img src="tu_logo.png" alt="nombre">
+    - banner-name / banner-category: nombre y categoría del negocio
+    - comercio-desc: descripción corta
+    - Cada .prod-item: foto (img o ícono), nombre, descripción y precio
+    - btn-wa href: reemplaza 57XXXXXXXXXX por el número real (con código de país, sin +)
+-->
+<div class="comercio-card">
+    <div class="comercio-banner banner-1">
+        <div class="banner-logo-row">
+            <div class="comercio-logo">
+                <!-- Reemplaza por: <img src="logo1.png" alt="Comercio 1"> -->
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+            <div>
+                <div class="banner-name">Nombre Comercio 1</div>
+                <div class="banner-category">Grow Shop</div>
+            </div>
+        </div>
+    </div>
+    <div class="comercio-body">
+        <p class="comercio-desc">
+            Descripción breve del comercio. Qué ofrece, su propósito
+            y por qué hace parte de la comunidad ᚲᚺᛁ.
+        </p>
+        <div class="productos-header">
+            <span class="productos-title">Top 5 productos insignia</span>
+            <button class="toggle-productos" onclick="toggleProductos(this)">
+                <i class="fa-solid fa-chevron-down"></i> Ver productos
+            </button>
+        </div>
+        <ul class="productos-list">
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 1</span>
+                    <span class="prod-desc">Descripción corta del producto, materiales, uso o beneficio.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 2</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 3</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 4</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 5</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+        </ul>
+        <div class="comercio-footer">
+            <div class="chi-tag">
+                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
+                Acepta <span>ᚲᚺᛁ</span>
+            </div>
+            <a href="https://wa.me/57XXXXXXXXXX" class="btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================= COMERCIO 2 ========================= -->
+<div class="comercio-card">
+    <div class="comercio-banner banner-2">
+        <div class="banner-logo-row">
+            <div class="comercio-logo">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div>
+                <div class="banner-name">Nombre Comercio 2</div>
+                <div class="banner-category">Alimentación</div>
+            </div>
+        </div>
+    </div>
+    <div class="comercio-body">
+        <p class="comercio-desc">
+            Descripción breve del comercio. Qué ofrece, su propósito
+            y por qué hace parte de la comunidad ᚲᚺᛁ.
+        </p>
+        <div class="productos-header">
+            <span class="productos-title">Top 5 productos insignia</span>
+            <button class="toggle-productos" onclick="toggleProductos(this)">
+                <i class="fa-solid fa-chevron-down"></i> Ver productos
+            </button>
+        </div>
+        <ul class="productos-list">
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 1</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 2</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 3</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 4</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 5</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+        </ul>
+        <div class="comercio-footer">
+            <div class="chi-tag">
+                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
+                Acepta <span>ᚲᚺᛁ</span>
+            </div>
+            <a href="https://wa.me/57XXXXXXXXXX" class="btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================= COMERCIO 3 ========================= -->
+<div class="comercio-card">
+    <div class="comercio-banner banner-3">
+        <div class="banner-logo-row">
+            <div class="comercio-logo">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div>
+                <div class="banner-name">Nombre Comercio 3</div>
+                <div class="banner-category">Tecnología</div>
+            </div>
+        </div>
+    </div>
+    <div class="comercio-body">
+        <p class="comercio-desc">
+            Descripción breve del comercio. Qué ofrece, su propósito
+            y por qué hace parte de la comunidad ᚲᚺᛁ.
+        </p>
+        <div class="productos-header">
+            <span class="productos-title">Top 5 productos insignia</span>
+            <button class="toggle-productos" onclick="toggleProductos(this)">
+                <i class="fa-solid fa-chevron-down"></i> Ver productos
+            </button>
+        </div>
+        <ul class="productos-list">
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 1</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 2</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 3</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 4</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 5</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+        </ul>
+        <div class="comercio-footer">
+            <div class="chi-tag">
+                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
+                Acepta <span>ᚲᚺᛁ</span>
+            </div>
+            <a href="https://wa.me/57XXXXXXXXXX" class="btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================= COMERCIO 4 ========================= -->
+<div class="comercio-card">
+    <div class="comercio-banner banner-4">
+        <div class="banner-logo-row">
+            <div class="comercio-logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div>
+                <div class="banner-name">Nombre Comercio 4</div>
+                <div class="banner-category">Salud</div>
+            </div>
+        </div>
+    </div>
+    <div class="comercio-body">
+        <p class="comercio-desc">
+            Descripción breve del comercio. Qué ofrece, su propósito
+            y por qué hace parte de la comunidad ᚲᚺᛁ.
+        </p>
+        <div class="productos-header">
+            <span class="productos-title">Top 5 productos insignia</span>
+            <button class="toggle-productos" onclick="toggleProductos(this)">
+                <i class="fa-solid fa-chevron-down"></i> Ver productos
+            </button>
+        </div>
+        <ul class="productos-list">
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 1</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 2</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 3</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 4</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 5</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+        </ul>
+        <div class="comercio-footer">
+            <div class="chi-tag">
+                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
+                Acepta <span>ᚲᚺᛁ</span>
+            </div>
+            <a href="https://wa.me/57XXXXXXXXXX" class="btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================= COMERCIO 5 ========================= -->
+<div class="comercio-card">
+    <div class="comercio-banner banner-5">
+        <div class="banner-logo-row">
+            <div class="comercio-logo">
+                <i class="fa-solid fa-palette"></i>
+            </div>
+            <div>
+                <div class="banner-name">Nombre Comercio 5</div>
+                <div class="banner-category">Arte y Diseño</div>
+            </div>
+        </div>
+    </div>
+    <div class="comercio-body">
+        <p class="comercio-desc">
+            Descripción breve del comercio. Qué ofrece, su propósito
+            y por qué hace parte de la comunidad ᚲᚺᛁ.
+        </p>
+        <div class="productos-header">
+            <span class="productos-title">Top 5 productos insignia</span>
+            <button class="toggle-productos" onclick="toggleProductos(this)">
+                <i class="fa-solid fa-chevron-down"></i> Ver productos
+            </button>
+        </div>
+        <ul class="productos-list">
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 1</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 2</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 3</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 4</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 5</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+        </ul>
+        <div class="comercio-footer">
+            <div class="chi-tag">
+                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
+                Acepta <span>ᚲᚺᛁ</span>
+            </div>
+            <a href="https://wa.me/57XXXXXXXXXX" class="btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================= COMERCIO 6 ========================= -->
+<div class="comercio-card">
+    <div class="comercio-banner banner-6">
+        <div class="banner-logo-row">
+            <div class="comercio-logo">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div>
+                <div class="banner-name">Nombre Comercio 6</div>
+                <div class="banner-category">Educación</div>
+            </div>
+        </div>
+    </div>
+    <div class="comercio-body">
+        <p class="comercio-desc">
+            Descripción breve del comercio. Qué ofrece, su propósito
+            y por qué hace parte de la comunidad ᚲᚺᛁ.
+        </p>
+        <div class="productos-header">
+            <span class="productos-title">Top 5 productos insignia</span>
+            <button class="toggle-productos" onclick="toggleProductos(this)">
+                <i class="fa-solid fa-chevron-down"></i> Ver productos
+            </button>
+        </div>
+        <ul class="productos-list">
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 1</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 2</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 3</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 4</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 5</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+        </ul>
+        <div class="comercio-footer">
+            <div class="chi-tag">
+                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
+                Acepta <span>ᚲᚺᛁ</span>
+            </div>
+            <a href="https://wa.me/57XXXXXXXXXX" class="btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================= COMERCIO 7 ========================= -->
+<div class="comercio-card">
+    <div class="comercio-banner banner-7">
+        <div class="banner-logo-row">
+            <div class="comercio-logo">
+                <i class="fa-solid fa-spa"></i>
+            </div>
+            <div>
+                <div class="banner-name">Nombre Comercio 7</div>
+                <div class="banner-category">Bienestar</div>
+            </div>
+        </div>
+    </div>
+    <div class="comercio-body">
+        <p class="comercio-desc">
+            Descripción breve del comercio. Qué ofrece, su propósito
+            y por qué hace parte de la comunidad ᚲᚺᛁ.
+        </p>
+        <div class="productos-header">
+            <span class="productos-title">Top 5 productos insignia</span>
+            <button class="toggle-productos" onclick="toggleProductos(this)">
+                <i class="fa-solid fa-chevron-down"></i> Ver productos
+            </button>
+        </div>
+        <ul class="productos-list">
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 1</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 2</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 3</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 4</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+            <li class="prod-item">
+                <div class="prod-info">
+                    <span class="prod-name">Nombre Producto 5</span>
+                    <span class="prod-desc">Descripción corta del producto.</span>
+                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                </div>
+            </li>
+        </ul>
+        <div class="comercio-footer">
+            <div class="chi-tag">
+                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
+                Acepta <span>ᚲᚺᛁ</span>
+            </div>
+            <a href="https://wa.me/57XXXXXXXXXX" class="btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar
+            </a>
+        </div>
+    </div>
+</div>
+
+
+</div><!-- /comercios-grid -->
+</div>
+</section>
+
+<footer>
+    <p>© 2025 ᚲᚺᛁ Coin. Todos los derechos reservados.</p>
+</footer>
+
+<a href="https://chat.whatsapp.com/Fydwr7LSnOwJTIW73ylV4q?s=sw&p=i&mlu=4"
+    class="floating-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+function toggleProductos(btn) {
+    const lista = btn.closest('.comercio-body').querySelector('.productos-list');
+    const icono = btn.querySelector('i');
+    const abierto = lista.classList.toggle('open');
+    btn.innerHTML = abierto
+        ? '<i class="fa-solid fa-chevron-up"></i> Ocultar'
+        : '<i class="fa-solid fa-chevron-down"></i> Ver productos';
+}
+
+// Buscador en tiempo real
+document.getElementById('searchInput').addEventListener('input', function(){
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('.comercio-card').forEach(card => {
+        card.style.display = card.innerText.toLowerCase().includes(q) ? 'flex' : 'none';
+    });
+});
+</script>
+
+</body>
+</html>
