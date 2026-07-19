@@ -1020,48 +1020,53 @@
     </a>
 
         <script>
-            const ctx = document.getElementById('cryptoChart');
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['1','2','3','4','5','6','7','8','9','10','11','12'],
-                    datasets: [{
-                        label: 'Valor ᚲᚺᛁ ',
-                        data: [33,41,47,68.5,70.33,68.28,95.1,98.17,95.85,94.00,93.49,106.11],
-                        borderColor:'#57B61F',
-                        backgroundColor:'rgba(87,182,31,.2)',
-                        fill:true,
-                        tension:0.4
-                    }]
-                },
-                options:{responsive:true,
-                    plugins:{
-                        legend:{
-                            labels:{color:'#fff'}
-                        }
+        fetch('chi-data.json')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('cryptoChart');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.labels,
+                        datasets: [{
+                            label: 'Valor ᚲᚺᛁ ',
+                            data: data.valores,
+                            borderColor:'#57B61F',
+                            backgroundColor:'rgba(87,182,31,.2)',
+                            fill:true,
+                            tension:0.4
+                        }]
                     },
-                    scales:{
-                        x:{
-                            ticks:{color:'#fff'},
-                            title:{
-                                display:true,
-                                text:'Semana (Inicio 4 semana de Abril)',
-                                color:'#888',
-                                font:{ size:13 }
+                    options:{responsive:true,
+                        plugins:{
+                            legend:{
+                                labels:{color:'#fff'}
                             }
                         },
-                        y:{
-                            ticks:{color:'#fff'},
-                            title:{
-                                display:true,
-                                text:'Valor en COP',
-                                color:'#888',
-                                font:{ size:13 }
+                        scales:{
+                            x:{
+                                ticks:{color:'#fff'},
+                                title:{
+                                    display:true,
+                                    text:'Semana (Inicio 4 semana de Abril)',
+                                    color:'#888',
+                                    font:{ size:13 }
+                                }
+                            },
+                            y:{
+                                ticks:{color:'#fff'},
+                                title:{
+                                    display:true,
+                                    text:'Valor en COP',
+                                    color:'#888',
+                                    font:{ size:13 }
+                                }
                             }
                         }
                     }
-                }
-            });
+                });
+            })
+            .catch(error => console.error('Error cargando los datos del gráfico:', error));
         </script>
         <script>
             const track = document.getElementById('foundersTrack');
