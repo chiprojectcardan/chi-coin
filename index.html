@@ -874,7 +874,7 @@
         <div class="stats-grid">
 
         <div class="card">
-        <h3>$106.11</h3>
+        <h3 id="valorActual">$0.00</h3>
         <p>Valor Actual(COP)</p>
         </div>
 
@@ -884,7 +884,7 @@
         </div>
 
         <div class="card">
-        <h3>13.38%</h3>
+        <h3 id="crecimientoSemanal">0%</h3>
         <p>Crecimiento Semanal</p>
         </div>
 
@@ -1023,14 +1023,31 @@
         fetch('chi-data.json')
             .then(response => response.json())
             .then(data => {
+                const labels = data.labels;
+                const valores = data.valores;
+        
+                // --- Calcular Valor Actual y Crecimiento Semanal ---
+                const valorActual = valores[valores.length - 1];
+                const valorAnterior = valores[valores.length - 2];
+                const crecimiento = ((valorActual - valorAnterior) / valorAnterior) * 100;
+        
+                document.getElementById('valorActual').textContent = '$' + valorActual.toFixed(2);
+                document.getElementById('crecimientoSemanal').textContent =
+                    (crecimiento >= 0 ? '+' : '') + crecimiento.toFixed(2) + '%';
+        
+                // Opcional: si el crecimiento es negativo, pinta la tarjeta en rojo en vez de verde
+                const cardCrecimiento = document.getElementById('crecimientoSemanal');
+                cardCrecimiento.style.color = crecimiento >= 0 ? '#57B61F' : '#e74c3c';
+        
+                // --- Gráfico ---
                 const ctx = document.getElementById('cryptoChart');
                 new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: data.labels,
+                        labels: labels,
                         datasets: [{
                             label: 'Valor ᚲᚺᛁ ',
-                            data: data.valores,
+                            data: valores,
                             borderColor:'#57B61F',
                             backgroundColor:'rgba(87,182,31,.2)',
                             fill:true,
