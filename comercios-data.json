@@ -1,0 +1,107 @@
+{
+  "comercios": [
+    {
+      "nombre": "The Root",
+      "categoria": "Grow Shop",
+      "icono": "fa-solid fa-seedling",
+      "banner": "banner-1",
+      "whatsapp": "573194397573",
+      "descripcion": "Productor elbaorados con flores canabicas , que ayudan a la salud de nuestra comunidad para diferentes momentos de la vida ᚲᚺᛁ.",
+      "productos": [
+        { "nombre": "Cream quita dolor", "descripcion": "Descripción corta del producto, materiales, uso o beneficio.", "precio": "$20.000 COP" },
+        { "nombre": "Nombre Producto 2", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Nombre Producto 3", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Nombre Producto 4", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Nombre Producto 5", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" }
+      ]
+    },
+    {
+      "nombre": "Supervital",
+      "categoria": "Salud",
+      "icono": "fa-solid fa-leaf",
+      "banner": "banner-2",
+      "whatsapp": "573172253190",
+      "descripcion": "Productos creados de elementos naturales, que apoyan a la comunidad a no depender de quimicos y productos que afectan nosivamente a  la salud ᚲᚺᛁ.",
+      "productos": [
+        { "nombre": "Crema dental artesanal", "descripcion": "Frescura herbal en fórmula artesanal con ingredientes botánicos seleccionados, Ingredientes: Caléndula, clavo, canela, arcilla blanca natural,aceite escencial de eucalipto, aceite de coco extra virgen glicerina y bicarbonato de sodio", "precio": "$0 COP" },
+        { "nombre": "Nombre Producto 2", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Enjuague bucal artesanal", "descripcion": "Producto artesanal libre de fluor, parabenos, BPA, sulfatos y sabores artificailes. Ingredientes: Agua filtrada, aceite escencial de menta, aceite escencial de eucalipto, canela, clavo y caléndla", "precio": "$0 COP" },
+        { "nombre": "Yogourt Griego", "descripcion": "Yourt griego artesanal, libre de conservantes y aditivos artificiales.", "precio": "$0 COP" },
+        { "nombre": "Sales", "descripcion": "Gama de Sales para la cocina, con diferentes mezclas exclusivas y exactas para cada uno de tus propositos", "precio": "$0 COP" }
+      ]
+    },
+    {
+      "nombre": "Revive",
+      "categoria": "salud y alimentacion",
+      "icono": "fa-solid fa-heart-pulse",
+      "banner": "banner-3",
+      "whatsapp": "573132139589",
+      "descripcion": "Somos una empresa dedicada al cultivo, desarrollo y comercialización de hongos comestibles y funcionales de alta calidad con propiedades nutricionales. Nuestros productos están diseñados para complementar una alimentación saludable, ofreciendo compuestos bioactivos que han sido estudiados por su potencial para apoyar la función cognitiva, el sistema inmunológico, el rendimiento físico y el bienestar general, siempre dentro de un estilo de vida equilibrado. ᚲᚺᛁ. Nuestros productos se presentan en pastilleros y polvo",
+      "productos": [
+        { "nombre": "Revive - Enfoque", "descripcion": "Una combinación de hongos funcionales cuidadosamente seleccionados, con Melena de León como ingrediente principal, diseñada para apoyar la concentración, la claridad mental y el rendimiento cognitivo. Ideal para estudiantes, profesionales y cualquier persona que busque mantener el enfoque durante el día como parte de un estilo de vida saludable.", "precio": "$65.000 COP" },
+        { "nombre": "Revive - Energia", "descripcion": "Una fórmula elaborada con Cordyceps y otros hongos funcionales, creada para acompañar un estilo de vida activo. Su combinación ofrece un impulso natural para afrontar la jornada con vitalidad, resistencia y energía sostenida, sin recurrir a estimulantes artificiales.", "precio": "$65.000 COP" },
+        { "nombre": "Revive - Defensas", "descripcion": "Una mezcla de hongos funcionales como Cola de Pavo, Reishi y otras especies reconocidas por su contenido de compuestos bioactivos. Diseñada para complementar una alimentación equilibrada y apoyar el funcionamiento normal del sistema inmunológico, promoviendo el bienestar general.", "precio": "$65.000 COP" },
+        { "nombre": "Setas comestibles", "descripcion": "Nuestros hongos comestibles, como el Champiñón, Portobello, Cola de Pavo y otras variedades, son cultivados bajo altos estándares de calidad para ofrecer frescura, sabor y un excelente perfil nutricional. Son una opción ideal para complementar una alimentación equilibrada con ingredientes naturales y versátiles.", "precio": "Depende del peso y la seta, preguntanos!!!" },
+        { "nombre": "Niños santos", "descripcion": "Hongos de origen natural, cuidadosamente seleccionados por su perfil bioactivo y su uso tradicional. Una propuesta pensada para quienes buscan explorar el bienestar, la conexión y el equilibrio desde un enfoque consciente y responsable.", "precio": "$80.000 COP" }
+      ]
+    },
+    {
+      "nombre": "Dr. Daniel Perez",
+      "categoria": "Servicios educativos y tecnologia",
+      "icono": "fa-solid fa-book-open",
+      "banner": "banner-4",
+      "whatsapp": "573149434777",
+      "descripcion": "Combino dos grandes pasiones: la educación y la logística internacional. Me desempeño como docente de idiomas e investigador, y además soy especialista en compras e importaciones desde Estados Unidos hacia Colombia, ayudando a personas y empresas a recibir sus productos de manera rápida, segura y eficiente.",
+      "productos": [
+        { "nombre": "Shipping", "descripcion": "Descripción corta del producto.", "precio": "Depende articulo y peso, preguntanos!!" },
+        { "nombre": "Docente Español", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Docente Ingles", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Tutorias en investigación", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Traducción e interpretación", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" }
+      ]
+    },
+    {
+      "nombre": "Bioplanet",
+      "categoria": "Espiritualidad y bienestar para plantas",
+      "icono": "fa-solid fa-heart-pulse",
+      "banner": "banner-5",
+      "whatsapp": "",
+      "descripcion": "Somos una empresa que une la sabiduría ancestral con el bienestar natural. Ofrecemos espacios dedicados al tarot, las constelaciones y otras herramientas de crecimiento personal, mientras desarrollamos una línea de productos naturales para el cuidado y la nutrición de plantas, incluyendo soluciones especializadas para el cultivo de cannabis donde la legislación aplicable lo permita. Nuestro propósito es promover el equilibrio, la conexión con la naturaleza y el desarrollo consciente. ᚲᚺᛁ.",
+      "productos": [
+        { "nombre": "Alimento para plantas", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Constelaciones", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Tarot", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Psicoanálisis", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" }
+      ]
+    },
+    {
+      "nombre": "alma de colores",
+      "categoria": "Diseño y personlizacion",
+      "icono": "fa-solid fa-palette",
+      "banner": "banner-6",
+      "whatsapp": "573142891385",
+      "descripcion": "Somos una empresa especializada en la personalización y estampado de productos, dedicada a transformar ideas en artículos únicos y de alta calidad. Trabajamos con tecnología de impresión de última generación para ofrecer acabados duraderos, colores vibrantes y diseños personalizados para personas, emprendimientos y empresas. ᚲᚺᛁ.",
+      "productos": [
+        { "nombre": "Articulos personalizados", "descripcion": "Personalizamos camisetas, hoodies, gorras, tote bags y otras prendas con diseños exclusivos, ideales para marcas, empresas, eventos o uso personal.", "precio": "desde $35.000 COP unidad y $25.000 por mayor" },
+        { "nombre": "Estampado de tus prendas", "descripcion": "Personalizamos tus prendas con el diseño que traigas o te ayudamos a diseñarlo.", "precio": "desde $10.000 COP depende del tamaño" },
+        { "nombre": "Termos personalizados", "descripcion": "Termos personalizados con nombres, logos o diseños exclusivos, ideales para regalos corporativos, eventos o uso personal.", "precio": "Desde $25.000 COP" },
+        { "nombre": "Stickers personalizados", "descripcion": "Stickers en diferentes tamaños y acabados, ideales para branding, decoración, empaques, computadores, botellas y mucho más.", "precio": "$10.000 COP depende de la cantidad y tamaño" }
+      ]
+    },
+    {
+      "nombre": "Nombre Comercio 7",
+      "categoria": "Bienestar",
+      "icono": "fa-solid fa-spa",
+      "banner": "banner-7",
+      "whatsapp": "",
+      "descripcion": "Descripción breve del comercio. Qué ofrece, su propósito y por qué hace parte de la comunidad ᚲᚺᛁ.",
+      "productos": [
+        { "nombre": "Nombre Producto 1", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Nombre Producto 2", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Nombre Producto 3", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Nombre Producto 4", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Nombre Producto 5", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" }
+      ]
+    }
+  ]
+}
