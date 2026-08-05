@@ -92,6 +92,7 @@ nav a.active{ color:var(--green); }
     grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
     gap:28px;
 }
+.estado-carga{ text-align:center; color:#666; padding:60px 0; grid-column:1/-1; }
 
 /* TARJETA COMERCIO */
 .comercio-card{
@@ -216,6 +217,7 @@ nav a.active{ color:var(--green); }
     background:#25D366; color:white; text-decoration:none;
     padding:10px 20px; border-radius:50px;
     font-size:.85rem; font-weight:600; transition:.3s; white-space:nowrap;
+    border:none; cursor:pointer;
 }
 .btn-wa:hover{ transform:translateY(-2px); background:#1ebe5a; }
 
@@ -319,7 +321,7 @@ footer p{ color:#888; }
     <p>Negocios reales que aceptan ᚲᚺᛁ. Compra, intercambia y apoya
     a quienes construyen la economía circular de nuestra comunidad.</p>
     <div class="hero-stats">
-        <div class="hero-stat"><strong>9+</strong><span>Comercios aliados</span></div>
+        <div class="hero-stat"><strong id="statComercios">0+</strong><span>Comercios aliados</span></div>
         <div class="hero-stat"><strong>ᚲᚺᛁ</strong><span>Moneda aceptada</span></div>
         <div class="hero-stat"><strong>100%</strong><span>Comunidad local</span></div>
     </div>
@@ -338,517 +340,8 @@ footer p{ color:#888; }
 <section class="comercios-section">
 <div class="container">
 <div class="comercios-grid" id="comerciosGrid">
-
-
-<!-- ========================= COMERCIO 1 ========================= -->
-<div class="comercio-card">
-    <div class="comercio-banner banner-1">
-        <div class="banner-logo-row">
-            <div class="comercio-logo">
-                <i class="fa-solid fa-seedling"></i>
-            </div>
-            <div>
-                <div class="banner-name">The Root</div>
-                <div class="banner-category">Grow Shop</div>
-            </div>
-        </div>
-    </div>
-    <div class="comercio-body">
-        <p class="comercio-desc">
-            Productor elbaorados con flores canabicas , que ayudan a la salud de nuestra comunidad
-            para diferentes momentos de la vida ᚲᚺᛁ.
-        </p>
-        <div class="productos-header">
-            <span class="productos-title">Top 5 productos insignia</span>
-            <button class="toggle-productos" onclick="toggleProductos(this)">
-                <i class="fa-solid fa-chevron-down"></i> Ver productos
-            </button>
-        </div>
-        <ul class="productos-list">
-            <li class="prod-item" data-wa="573194397573">
-                <div class="prod-info">
-                    <span class="prod-name">Cream quita dolor</span>
-                    <span class="prod-desc">Descripción corta del producto, materiales, uso o beneficio.</span>
-                    <span class="prod-price">$20.000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573194397573">
-                <div class="prod-info">
-                    <span class="prod-name">Nombre Producto 2</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573194397573">
-                <div class="prod-info">
-                    <span class="prod-name">Nombre Producto 3</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573194397573">
-                <div class="prod-info">
-                    <span class="prod-name">Nombre Producto 4</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573194397573">
-                <div class="prod-info">
-                    <span class="prod-name">Nombre Producto 5</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-        </ul>
-        <div class="comercio-footer">
-            <div class="chi-tag">
-                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
-                Acepta <span>ᚲᚺᛁ</span>
-            </div>
-            <a href="#" class="btn-wa" data-wa="573194397573" data-store="The Root" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contactar
-            </a>
-        </div>
-    </div>
+    <p class="estado-carga">Cargando comercios...</p>
 </div>
-
-
-<!-- ========================= COMERCIO 2 ========================= -->
-<div class="comercio-card">
-    <div class="comercio-banner banner-2">
-        <div class="banner-logo-row">
-            <div class="comercio-logo">
-                <i class="fa-solid fa-leaf"></i>
-            </div>
-            <div>
-                <div class="banner-name">Supervital</div>
-                <div class="banner-category">Salud</div>
-            </div>
-        </div>
-    </div>
-    <div class="comercio-body">
-        <p class="comercio-desc">
-            Productos creados de elementos naturales, que apoyan a la comunidad
-            a no depender de quimicos y productos que afectan nosivamente a  la salud ᚲᚺᛁ.
-        </p>
-        <div class="productos-header">
-            <span class="productos-title">Top 5 productos insignia</span>
-            <button class="toggle-productos" onclick="toggleProductos(this)">
-                <i class="fa-solid fa-chevron-down"></i> Ver productos
-            </button>
-        </div>
-        <ul class="productos-list">
-            <li class="prod-item" data-wa="573172253190">
-                <div class="prod-info">
-                    <span class="prod-name">Crema dental artesanal</span>
-                    <span class="prod-desc">Frescura herbal en fórmula artesanal con ingredientes botánicos seleccionados, 
-                        Ingredientes: Caléndula, clavo, canela, arcilla blanca natural,aceite escencial de eucalipto, aceite de coco extra virgen
-                    glicerina y bicarbonato de sodio</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573172253190">
-                <div class="prod-info">
-                    <span class="prod-name">Nombre Producto 2</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573172253190">
-                <div class="prod-info">
-                    <span class="prod-name">Enjuague bucal artesanal</span>
-                    <span class="prod-desc">Producto artesanal libre de fluor, parabenos, BPA, sulfatos y sabores artificailes.
-                    Ingredientes: Agua filtrada, aceite escencial de menta, aceite escencial de eucalipto, canela, clavo y caléndla</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573172253190">
-                <div class="prod-info">
-                    <span class="prod-name">Yogourt Griego</span>
-                    <span class="prod-desc">Yourt griego artesanal, libre de conservantes y aditivos artificiales.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573172253190">
-                <div class="prod-info">
-                    <span class="prod-name">Sales</span>
-                    <span class="prod-desc">Gama de Sales para la cocina, con diferentes mezclas exclusivas y exactas para cada uno de tus propositos</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-        </ul>
-        <div class="comercio-footer">
-            <div class="chi-tag">
-                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
-                Acepta <span>ᚲᚺᛁ</span>
-            </div>
-            <a href="#" class="btn-wa" data-wa="573172253190" data-store="Supervital" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contactar
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<!-- ========================= COMERCIO 3 ========================= -->
-<div class="comercio-card">
-    <div class="comercio-banner banner-3">
-        <div class="banner-logo-row">
-            <div class="comercio-logo">
-                <i class="fa-solid fa-heart-pulse"></i>
-            </div>
-            <div>
-                <div class="banner-name">Revive</div>
-                <div class="banner-category">salud y alimentacion</div>
-            </div>
-        </div>
-    </div>
-    <div class="comercio-body">
-        <p class="comercio-desc">
-            Somos una empresa dedicada al cultivo, desarrollo y comercialización de hongos comestibles y 
-            funcionales de alta calidad con propiedades nutricionales. Nuestros productos están diseñados 
-            para complementar una alimentación saludable, ofreciendo compuestos bioactivos que han sido 
-            estudiados por su potencial para apoyar la función cognitiva, el sistema inmunológico,
-            el rendimiento físico y el bienestar general, siempre dentro de un estilo de vida equilibrado. ᚲᚺᛁ.
-
-            Nuestros productos se presentan en pastilleros y polvo
-        </p>
-        <div class="productos-header">
-            <span class="productos-title">Top 5 productos insignia</span>
-            <button class="toggle-productos" onclick="toggleProductos(this)">
-                <i class="fa-solid fa-chevron-down"></i> Ver productos
-            </button>
-        </div>
-        <ul class="productos-list">
-            <li class="prod-item" data-wa="573132139589">
-                <div class="prod-info">
-                    <span class="prod-name">Revive - Enfoque</span>
-                    <span class="prod-desc">Una combinación de hongos funcionales cuidadosamente seleccionados, con Melena de León como ingrediente principal, diseñada para apoyar la concentración, la claridad mental y el rendimiento cognitivo. Ideal para estudiantes, profesionales y cualquier persona que busque mantener el enfoque durante el día como parte de un estilo de vida saludable..</span>
-                    <span class="prod-price">$65.0000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573132139589">
-                <div class="prod-info">
-                    <span class="prod-name">Revive - Energia </span>
-                    <span class="prod-desc">Una fórmula elaborada con Cordyceps y otros hongos funcionales, creada para acompañar un estilo de vida activo. Su combinación ofrece un impulso natural para afrontar la jornada con vitalidad, resistencia y energía sostenida, sin recurrir a estimulantes artificiales..</span>
-                    <span class="prod-price">$65.000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573132139589">
-                <div class="prod-info">
-                    <span class="prod-name">revive - Defensas</span>
-                    <span class="prod-desc">Una mezcla de hongos funcionales como Cola de Pavo, Reishi y otras especies reconocidas por su contenido de compuestos bioactivos. Diseñada para complementar una alimentación equilibrada y apoyar el funcionamiento normal del sistema inmunológico, promoviendo el bienestar general..</span>
-                    <span class="prod-price">$65.000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573132139589">
-                <div class="prod-info">
-                    <span class="prod-name">setas comestibles</span>
-                    <span class="prod-desc">Nuestros hongos comestibles, como el Champiñón, Portobello, Cola de Pavo y otras variedades, son cultivados bajo altos estándares de calidad para ofrecer frescura, sabor y un excelente perfil nutricional. Son una opción ideal para complementar una alimentación equilibrada con ingredientes naturales y versátiles..</span>
-                    <span class="prod-price">Depende del peso y la seta, preguntanos!!! <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573132139589">
-                <div class="prod-info">
-                    <span class="prod-name">Niños santos</span>
-                    <span class="prod-desc">Hongos de origen natural, cuidadosamente seleccionados por su perfil bioactivo y su uso tradicional. Una propuesta pensada para quienes buscan explorar el bienestar, la conexión y el equilibrio desde un enfoque consciente y responsable..</span>
-                    <span class="prod-price">$80.000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-        </ul>
-        <div class="comercio-footer">
-            <div class="chi-tag">
-                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
-                Acepta <span>ᚲᚺᛁ</span>
-            </div>
-            <a href="#" class="btn-wa" data-wa="573132139589" data-store="Revive" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contactar
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<!-- ========================= COMERCIO 4 ========================= -->
-<div class="comercio-card">
-    <div class="comercio-banner banner-4">
-        <div class="banner-logo-row">
-            <div class="comercio-logo">
-                <i class="fa-solid fa-book-open"></i>
-            </div>
-            <div>
-                <div class="banner-name">Dr. Daniel Perez</div>
-                <div class="banner-category">Servicios educativos y tecnologia</div>
-            </div>
-        </div>
-    </div>
-    <div class="comercio-body">
-        <p class="comercio-desc">
-            Combino dos grandes pasiones: la educación y la logística internacional. Me desempeño como docente de idiomas e investigador, y además soy especialista en compras e importaciones desde Estados Unidos hacia Colombia, ayudando a personas y empresas a recibir sus productos de manera rápida, segura y eficiente.        </p>
-        <div class="productos-header">
-            <span class="productos-title">Top 5 productos insignia</span>
-            <button class="toggle-productos" onclick="toggleProductos(this)">
-                <i class="fa-solid fa-chevron-down"></i> Ver productos
-            </button>
-        </div>
-        <ul class="productos-list">
-            <li class="prod-item" data-wa="573149434777">
-                <div class="prod-info">
-                    <span class="prod-name">Shipping</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">Depende articulo y peso, preguntanos!! <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573149434777">
-                <div class="prod-info">
-                    <span class="prod-name">Docente Español</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573149434777">
-                <div class="prod-info">
-                    <span class="prod-name">Docente Ingles</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573149434777">
-                <div class="prod-info">
-                    <span class="prod-name">tutorias en investigación</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573149434777">
-                <div class="prod-info">
-                    <span class="prod-name">Traducción e interpretación</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-        </ul>
-        <div class="comercio-footer">
-            <div class="chi-tag">
-                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
-                Acepta <span>ᚲᚺᛁ</span>
-            </div>
-            <a href="#" class="btn-wa" data-wa="573149434777" data-store="Dr. Daniel Perez" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contactar
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<!-- ========================= COMERCIO 5 ========================= -->
-<div class="comercio-card">
-    <div class="comercio-banner banner-5">
-        <div class="banner-logo-row">
-            <div class="comercio-logo">
-                <i class="fa-solid fa-heart-pulse"></i>
-            </div>
-            <div>
-                <div class="banner-name">Bioplanet</div>
-                <div class="banner-category">Espiritualidad y bienestar para plantas</div>
-            </div>
-        </div>
-    </div>
-    <div class="comercio-body">
-        <p class="comercio-desc">
-            Somos una empresa que une la sabiduría ancestral con el bienestar natural. Ofrecemos espacios dedicados al tarot, las constelaciones y otras herramientas de crecimiento personal, mientras desarrollamos una línea de productos naturales para el cuidado y la nutrición de plantas, incluyendo soluciones especializadas para el cultivo de cannabis donde la legislación aplicable lo permita. Nuestro propósito es promover el equilibrio, la conexión con la naturaleza y el desarrollo consciente. ᚲᚺᛁ.
-        </p>
-        <div class="productos-header">
-            <span class="productos-title">Top 5 productos insignia</span>
-            <button class="toggle-productos" onclick="toggleProductos(this)">
-                <i class="fa-solid fa-chevron-down"></i> Ver productos
-            </button>
-        </div>
-        <ul class="productos-list">
-            <li class="prod-item" data-wa="">
-                <div class="prod-info">
-                    <span class="prod-name">Alimento para plantas</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="">
-                <div class="prod-info">
-                    <span class="prod-name">Constelaciones</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="">
-                <div class="prod-info">
-                    <span class="prod-name">Tarod</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="">
-                <div class="prod-info">
-                    <span class="prod-name">Psicoanálisis</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-        </ul>
-        <div class="comercio-footer">
-            <div class="chi-tag">
-                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
-                Acepta <span>ᚲᚺᛁ</span>
-            </div>
-            <a href="#" class="btn-wa" data-wa="" data-store="Bioplanet" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contactar
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<!-- ========================= COMERCIO 6 ========================= -->
-<div class="comercio-card">
-    <div class="comercio-banner banner-6">
-        <div class="banner-logo-row">
-            <div class="comercio-logo">
-                <i class="fa-solid fa-palette"></i>
-            </div>
-            <div>
-                <div class="banner-name">alma de colores</div>
-                <div class="banner-category">Diseño y personlizacion</div>
-            </div>
-        </div>
-    </div>
-    <div class="comercio-body">
-        <p class="comercio-desc">
-            Somos una empresa especializada en la personalización y estampado de productos, dedicada a transformar ideas en artículos únicos y de alta calidad. Trabajamos con tecnología de impresión de última generación para ofrecer acabados duraderos, colores vibrantes y diseños personalizados para personas, emprendimientos y empresas.ᚲᚺᛁ.
-        </p>
-        <div class="productos-header">
-            <span class="productos-title">Top 5 productos insignia</span>
-            <button class="toggle-productos" onclick="toggleProductos(this)">
-                <i class="fa-solid fa-chevron-down"></i> Ver productos
-            </button>
-        </div>
-        <ul class="productos-list">
-            <li class="prod-item" data-wa="573142891385">
-                <div class="prod-info">
-                    <span class="prod-name">Articulos personalizados</span>
-                    <span class="prod-desc">Personalizamos camisetas, hoodies, gorras, tote bags y otras prendas con diseños exclusivos, ideales para marcas, empresas, eventos o uso personal..</span>
-                    <span class="prod-price">desde $35.000 COP unidad y $25.000 por mayor<span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573142891385">
-                <div class="prod-info">
-                    <span class="prod-name">Estamapdo de tus prendas</span>
-                    <span class="prod-desc">Personalizamos tus prendas con el diseño que traigas o te ayudamos a diseñarlo.</span>
-                    <span class="prod-price">desde $10.000 COP depende del tamaño <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573142891385">
-                <div class="prod-info">
-                    <span class="prod-name">Termos personalizados</span>
-                    <span class="prod-desc">Termos personalizados con nombres, logos o diseños exclusivos, ideales para regalos corporativos, eventos o uso personal..</span>
-                    <span class="prod-price">Desde $25.000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="573142891385">
-                <div class="prod-info">
-                    <span class="prod-name">Stickers personalizados</span>
-                    <span class="prod-desc">Stickers en diferentes tamaños y acabados, ideales para branding, decoración, empaques, computadores, botellas y mucho más..</span>
-                    <span class="prod-price">$10.000 COP depende de la cantidad y tamaño <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-        </ul>
-        <div class="comercio-footer">
-            <div class="chi-tag">
-                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
-                Acepta <span>ᚲᚺᛁ</span>
-            </div>
-            <a href="#" class="btn-wa" data-wa="573142891385" data-store="alma de colores" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contactar
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<!-- ========================= COMERCIO 7 ========================= -->
-<div class="comercio-card">
-    <div class="comercio-banner banner-7">
-        <div class="banner-logo-row">
-            <div class="comercio-logo">
-                <i class="fa-solid fa-spa"></i>
-            </div>
-            <div>
-                <div class="banner-name">Nombre Comercio 7</div>
-                <div class="banner-category">Bienestar</div>
-            </div>
-        </div>
-    </div>
-    <div class="comercio-body">
-        <p class="comercio-desc">
-            Descripción breve del comercio. Qué ofrece, su propósito
-            y por qué hace parte de la comunidad ᚲᚺᛁ.
-        </p>
-        <div class="productos-header">
-            <span class="productos-title">Top 5 productos insignia</span>
-            <button class="toggle-productos" onclick="toggleProductos(this)">
-                <i class="fa-solid fa-chevron-down"></i> Ver productos
-            </button>
-        </div>
-        <ul class="productos-list">
-            <li class="prod-item" data-wa="">
-                <div class="prod-info">
-                    <span class="prod-name">Nombre Producto 1</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="">
-                <div class="prod-info">
-                    <span class="prod-name">Nombre Producto 2</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="">
-                <div class="prod-info">
-                    <span class="prod-name">Nombre Producto 3</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="">
-                <div class="prod-info">
-                    <span class="prod-name">Nombre Producto 4</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-            <li class="prod-item" data-wa="">
-                <div class="prod-info">
-                    <span class="prod-name">Nombre Producto 5</span>
-                    <span class="prod-desc">Descripción corta del producto.</span>
-                    <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
-                </div>
-            </li>
-        </ul>
-        <div class="comercio-footer">
-            <div class="chi-tag">
-                <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
-                Acepta <span>ᚲᚺᛁ</span>
-            </div>
-            <a href="#" class="btn-wa" data-wa="" data-store="Nombre Comercio 7" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contactar
-            </a>
-        </div>
-    </div>
-</div>
-
-
-</div><!-- /comercios-grid -->
 </div>
 </section>
 
@@ -862,15 +355,124 @@ footer p{ color:#888; }
 </a>
 
 <script>
-function toggleProductos(btn) {
-    const lista = btn.closest('.comercio-body').querySelector('.productos-list');
-    const abierto = lista.classList.toggle('open');
-    btn.innerHTML = abierto
-        ? '<i class="fa-solid fa-chevron-up"></i> Ocultar'
-        : '<i class="fa-solid fa-chevron-down"></i> Ver productos';
+// ===== Ruta del archivo JSON con los datos de los comercios =====
+const JSON_URL = 'comercios-data.json';
+
+const grid = document.getElementById('comerciosGrid');
+
+// Escapa texto para insertarlo seguro dentro de HTML
+function esc(str){
+    return String(str ?? '')
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
-// Buscador en tiempo real
+const MENSAJE_GENERICO = (comercio) =>
+    `Hola ${comercio}, te escribo desde la página del proyecto ᚲᚺᛁ. Me interesan los productos de tu comercio, ¿me puedes dar más información?`;
+
+const MENSAJE_PRODUCTO = (comercio, producto) =>
+    `Hola ${comercio}, vi "${producto}" en la página de comercios aliados ᚲᚺᛁ . ¿Me das más información?`;
+
+function crearTarjeta(comercio, indice){
+    const banner = comercio.banner || `banner-${(indice % 7) + 1}`;
+    const icono = comercio.icono || 'fa-solid fa-shop';
+    const tieneWa = !!comercio.whatsapp;
+
+    const productosHTML = (comercio.productos || []).map(p => `
+        <li class="prod-item">
+            <div class="prod-info">
+                <span class="prod-name">${esc(p.nombre)}</span>
+                <span class="prod-desc">${esc(p.descripcion)}</span>
+                <span class="prod-price">${esc(p.precio)} <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
+                ${tieneWa ? `<button type="button" class="prod-wa" data-producto="${esc(p.nombre)}"><i class="fab fa-whatsapp"></i> Preguntar por este producto</button>` : ''}
+            </div>
+        </li>
+    `).join('');
+
+    const card = document.createElement('div');
+    card.className = 'comercio-card';
+    card.innerHTML = `
+        <div class="comercio-banner ${banner}">
+            <div class="banner-logo-row">
+                <div class="comercio-logo"><i class="${icono}"></i></div>
+                <div>
+                    <div class="banner-name">${esc(comercio.nombre)}</div>
+                    <div class="banner-category">${esc(comercio.categoria)}</div>
+                </div>
+            </div>
+        </div>
+        <div class="comercio-body">
+            <p class="comercio-desc">${esc(comercio.descripcion)}</p>
+            <div class="productos-header">
+                <span class="productos-title">Top ${ (comercio.productos || []).length } productos insignia</span>
+                <button class="toggle-productos" type="button">
+                    <i class="fa-solid fa-chevron-down"></i> Ver productos
+                </button>
+            </div>
+            <ul class="productos-list">${productosHTML}</ul>
+            <div class="comercio-footer">
+                <div class="chi-tag">
+                    <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
+                    Acepta <span>ᚲᚺᛁ</span>
+                </div>
+                <button type="button" class="btn-wa" ${tieneWa ? '' : 'data-sin-wa="1"'}>
+                    <i class="fab fa-whatsapp"></i> Contactar
+                </button>
+            </div>
+        </div>
+    `;
+
+    // Toggle ver productos
+    card.querySelector('.toggle-productos').addEventListener('click', function(){
+        const lista = card.querySelector('.productos-list');
+        const abierto = lista.classList.toggle('open');
+        this.innerHTML = abierto
+            ? '<i class="fa-solid fa-chevron-up"></i> Ocultar'
+            : '<i class="fa-solid fa-chevron-down"></i> Ver productos';
+    });
+
+    // Botón contactar general
+    card.querySelector('.btn-wa').addEventListener('click', function(){
+        if(!tieneWa){
+            alert('Este comercio aún no tiene número de WhatsApp configurado.');
+            return;
+        }
+        const mensaje = MENSAJE_GENERICO(comercio.nombre);
+        window.open(`https://wa.me/${comercio.whatsapp}?text=${encodeURIComponent(mensaje)}`, '_blank');
+    });
+
+    // Botones "preguntar por este producto"
+    card.querySelectorAll('.prod-wa').forEach(btn => {
+        btn.addEventListener('click', function(){
+            const producto = this.dataset.producto;
+            const mensaje = MENSAJE_PRODUCTO(comercio.nombre, producto);
+            window.open(`https://wa.me/${comercio.whatsapp}?text=${encodeURIComponent(mensaje)}`, '_blank');
+        });
+    });
+
+    return card;
+}
+
+async function cargarComercios(){
+    try {
+        const res = await fetch(JSON_URL);
+        if(!res.ok) throw new Error('No se pudo cargar el JSON de comercios');
+        const data = await res.json();
+        const comercios = data.comercios || [];
+
+        grid.innerHTML = '';
+        comercios.forEach((c, i) => grid.appendChild(crearTarjeta(c, i)));
+
+        const statEl = document.getElementById('statComercios');
+        if(statEl) statEl.textContent = comercios.length + '+';
+
+    } catch(err){
+        console.error(err);
+        grid.innerHTML = '<p class="estado-carga">No se pudieron cargar los comercios. Intenta recargar la página.</p>';
+    }
+}
+
+// Buscador en tiempo real (funciona sobre las tarjetas ya renderizadas)
 document.getElementById('searchInput').addEventListener('input', function(){
     const q = this.value.toLowerCase();
     document.querySelectorAll('.comercio-card').forEach(card => {
@@ -878,43 +480,7 @@ document.getElementById('searchInput').addEventListener('input', function(){
     });
 });
 
-// ===== Mensaje automático de WhatsApp =====
-// Botón principal "Contactar": mensaje genérico con el nombre del comercio
-document.querySelectorAll('.btn-wa[data-wa]').forEach(link => {
-    link.addEventListener('click', function(e){
-        e.preventDefault();
-        const numero = this.dataset.wa;
-        const comercio = this.dataset.store || '';
-        if(!numero){
-            alert('Este comercio aún no tiene número de WhatsApp configurado.');
-            return;
-        }
-        const mensaje = `Hola ${comercio}, te escribo desde la página del proyecto ᚲᚺᛁ. Estoy interesado/a en los productos de tu comercio, ¿me puedes dar más información?`;
-        window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
-    });
-});
-
-// Botón individual por producto: mensaje mencionando el producto específico
-document.querySelectorAll('.prod-item[data-wa]').forEach(item => {
-    const numero = item.dataset.wa;
-    if(!numero) return; // comercio sin whatsapp aún
-
-    const nombreProducto = item.querySelector('.prod-name')?.textContent.trim() || 'este producto';
-    const card = item.closest('.comercio-card');
-    const comercio = card ? card.querySelector('.banner-name')?.textContent.trim() : '';
-
-    const infoDiv = item.querySelector('.prod-info');
-    const enlace = document.createElement('a');
-    enlace.href = '#';
-    enlace.className = 'prod-wa';
-    enlace.innerHTML = '<i class="fab fa-whatsapp"></i> Preguntar por este producto';
-    enlace.addEventListener('click', function(e){
-        e.preventDefault();
-        const mensaje = `Hola ${comercio}, vi "${nombreProducto}" en la página de comercios aliados ᚲᚺᛁ y estoy interesado/a. ¿Me das más información?`;
-        window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
-    });
-    infoDiv.appendChild(enlace);
-});
+cargarComercios();
 </script>
 <script>
     const menuToggle = document.getElementById('menuToggle');
