@@ -197,15 +197,29 @@ nav a.active{ color:var(--green); }
 }
 
 .prod-wa{
-    background:#1EBE5A;
-    color:#fff;
-    border:1px solid #1EBE5A;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:6px;
+
+    background:#1EBE5A;      /* Verde inicial */
+    color:#ffffff;           /* Texto blanco */
+    border:1px solid #25D366;
+
+    text-decoration:none;
+    font-size:.76rem;
+    font-weight:600;
+    width:fit-content;
+    padding:5px 12px;
+    border-radius:50px;
+
+    transition:all .25s ease;
 }
 
 .prod-wa:hover{
-    background:#57B61F;   /* El mismo verde principal de la página */
-    color:#fff;
-    border-color:#57B61F;
+    background:#4BE37E;      /* Verde más claro */
+    color:#ffffff;           /* Sigue blanco */
+    border-color:#4BE37E;
 }
     
 /* PIE */
