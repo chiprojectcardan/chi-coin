@@ -455,8 +455,8 @@ function crearTarjeta(comercio, indice){
 
 async function cargarComercios(){
     try {
-        const res = await fetch(JSON_URL);
-        if(!res.ok) throw new Error('No se pudo cargar el JSON de comercios');
+        const res = await fetch(`comercios-data.json?v=${Date.now()}`);
+        if(!res.ok) throw new Error('No se pudo cargar la data de comercios');
         const data = await res.json();
         const comercios = data.comercios || [];
 
