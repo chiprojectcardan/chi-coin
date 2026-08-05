@@ -129,7 +129,6 @@ nav a.active{ color:var(--green); }
 }
 .comercio-logo img{ width:100%; height:100%; object-fit:cover; }
 .banner-name{
-    /* nombre del comercio visible cerca al logo */
     font-weight:700; font-size:1.05rem;
     text-shadow:0 2px 8px rgba(0,0,0,.8);
     padding-bottom:4px;
@@ -162,7 +161,6 @@ nav a.active{ color:var(--green); }
 }
 .toggle-productos:hover{ border-color:var(--green); color:var(--green); }
 
-/* lista colapsable de productos */
 .productos-list{
     list-style:none;
     display:flex; flex-direction:column; gap:0;
@@ -176,7 +174,6 @@ nav a.active{ color:var(--green); }
     opacity:1;
 }
 
-/* cada producto */
 .prod-item{
     display:grid;
     gap:12px;
@@ -197,6 +194,14 @@ nav a.active{ color:var(--green); }
 .prod-price .chi-label{
     font-size:.7rem; color:#555; font-weight:400;
 }
+.prod-wa{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:6px; color:#25D366; text-decoration:none;
+    font-size:.76rem; font-weight:600; width:fit-content;
+    border:1px solid #1f3d2a; padding:5px 12px; border-radius:50px;
+    transition:.25s;
+}
+.prod-wa:hover{ background:#25D366; color:white; border-color:#25D366; }
 
 /* PIE */
 .comercio-footer{
@@ -336,20 +341,10 @@ footer p{ color:#888; }
 
 
 <!-- ========================= COMERCIO 1 ========================= -->
-<!--
-    CÓMO EDITAR ESTA TARJETA:
-    - banner-1 a banner-7: cambia el color de fondo del encabezado
-    - comercio-logo: reemplaza el ícono por <img src="tu_logo.png" alt="nombre">
-    - banner-name / banner-category: nombre y categoría del negocio
-    - comercio-desc: descripción corta
-    - Cada .prod-item: foto (img o ícono), nombre, descripción y precio
-    - btn-wa href: reemplaza 57XXXXXXXXXX por el número real (con código de país, sin +)
--->
 <div class="comercio-card">
     <div class="comercio-banner banner-1">
         <div class="banner-logo-row">
             <div class="comercio-logo">
-                <!-- Reemplaza por: <img src="logo1.png" alt="Comercio 1"> -->
                 <i class="fa-solid fa-seedling"></i>
             </div>
             <div>
@@ -370,35 +365,35 @@ footer p{ color:#888; }
             </button>
         </div>
         <ul class="productos-list">
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573194397573">
                 <div class="prod-info">
-                    <span class="prod-name">Cream quita dolor/span>
+                    <span class="prod-name">Cream quita dolor</span>
                     <span class="prod-desc">Descripción corta del producto, materiales, uso o beneficio.</span>
                     <span class="prod-price">$20.000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573194397573">
                 <div class="prod-info">
                     <span class="prod-name">Nombre Producto 2</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573194397573">
                 <div class="prod-info">
                     <span class="prod-name">Nombre Producto 3</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573194397573">
                 <div class="prod-info">
                     <span class="prod-name">Nombre Producto 4</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573194397573">
                 <div class="prod-info">
                     <span class="prod-name">Nombre Producto 5</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
@@ -411,7 +406,7 @@ footer p{ color:#888; }
                 <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
                 Acepta <span>ᚲᚺᛁ</span>
             </div>
-            <a href="https://wa.me/57X3194397573" class="btn-wa" target="_blank">
+            <a href="#" class="btn-wa" data-wa="573194397573" data-store="The Root" target="_blank">
                 <i class="fab fa-whatsapp"></i> Contactar
             </a>
         </div>
@@ -444,7 +439,7 @@ footer p{ color:#888; }
             </button>
         </div>
         <ul class="productos-list">
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573172253190">
                 <div class="prod-info">
                     <span class="prod-name">Crema dental artesanal</span>
                     <span class="prod-desc">Frescura herbal en fórmula artesanal con ingredientes botánicos seleccionados, 
@@ -453,14 +448,14 @@ footer p{ color:#888; }
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573172253190">
                 <div class="prod-info">
                     <span class="prod-name">Nombre Producto 2</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573172253190">
                 <div class="prod-info">
                     <span class="prod-name">Enjuague bucal artesanal</span>
                     <span class="prod-desc">Producto artesanal libre de fluor, parabenos, BPA, sulfatos y sabores artificailes.
@@ -468,14 +463,14 @@ footer p{ color:#888; }
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573172253190">
                 <div class="prod-info">
                     <span class="prod-name">Yogourt Griego</span>
                     <span class="prod-desc">Yourt griego artesanal, libre de conservantes y aditivos artificiales.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573172253190">
                 <div class="prod-info">
                     <span class="prod-name">Sales</span>
                     <span class="prod-desc">Gama de Sales para la cocina, con diferentes mezclas exclusivas y exactas para cada uno de tus propositos</span>
@@ -488,7 +483,7 @@ footer p{ color:#888; }
                 <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
                 Acepta <span>ᚲᚺᛁ</span>
             </div>
-            <a href="https://wa.me/573172253190" class="btn-wa" target="_blank">
+            <a href="#" class="btn-wa" data-wa="573172253190" data-store="Supervital" target="_blank">
                 <i class="fab fa-whatsapp"></i> Contactar
             </a>
         </div>
@@ -526,35 +521,35 @@ footer p{ color:#888; }
             </button>
         </div>
         <ul class="productos-list">
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573132139589">
                 <div class="prod-info">
                     <span class="prod-name">Revive - Enfoque</span>
                     <span class="prod-desc">Una combinación de hongos funcionales cuidadosamente seleccionados, con Melena de León como ingrediente principal, diseñada para apoyar la concentración, la claridad mental y el rendimiento cognitivo. Ideal para estudiantes, profesionales y cualquier persona que busque mantener el enfoque durante el día como parte de un estilo de vida saludable..</span>
                     <span class="prod-price">$65.0000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573132139589">
                 <div class="prod-info">
                     <span class="prod-name">Revive - Energia </span>
                     <span class="prod-desc">Una fórmula elaborada con Cordyceps y otros hongos funcionales, creada para acompañar un estilo de vida activo. Su combinación ofrece un impulso natural para afrontar la jornada con vitalidad, resistencia y energía sostenida, sin recurrir a estimulantes artificiales..</span>
                     <span class="prod-price">$65.000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573132139589">
                 <div class="prod-info">
                     <span class="prod-name">revive - Defensas</span>
                     <span class="prod-desc">Una mezcla de hongos funcionales como Cola de Pavo, Reishi y otras especies reconocidas por su contenido de compuestos bioactivos. Diseñada para complementar una alimentación equilibrada y apoyar el funcionamiento normal del sistema inmunológico, promoviendo el bienestar general..</span>
                     <span class="prod-price">$65.000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573132139589">
                 <div class="prod-info">
                     <span class="prod-name">setas comestibles</span>
                     <span class="prod-desc">Nuestros hongos comestibles, como el Champiñón, Portobello, Cola de Pavo y otras variedades, son cultivados bajo altos estándares de calidad para ofrecer frescura, sabor y un excelente perfil nutricional. Son una opción ideal para complementar una alimentación equilibrada con ingredientes naturales y versátiles..</span>
                     <span class="prod-price">Depende del peso y la seta, preguntanos!!! <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573132139589">
                 <div class="prod-info">
                     <span class="prod-name">Niños santos</span>
                     <span class="prod-desc">Hongos de origen natural, cuidadosamente seleccionados por su perfil bioactivo y su uso tradicional. Una propuesta pensada para quienes buscan explorar el bienestar, la conexión y el equilibrio desde un enfoque consciente y responsable..</span>
@@ -567,7 +562,7 @@ footer p{ color:#888; }
                 <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
                 Acepta <span>ᚲᚺᛁ</span>
             </div>
-            <a href="https://wa.me/573132139589" class="btn-wa" target="_blank">
+            <a href="#" class="btn-wa" data-wa="573132139589" data-store="Revive" target="_blank">
                 <i class="fab fa-whatsapp"></i> Contactar
             </a>
         </div>
@@ -598,35 +593,35 @@ footer p{ color:#888; }
             </button>
         </div>
         <ul class="productos-list">
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573149434777">
                 <div class="prod-info">
                     <span class="prod-name">Shipping</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">Depende articulo y peso, preguntanos!! <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573149434777">
                 <div class="prod-info">
                     <span class="prod-name">Docente Español</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573149434777">
                 <div class="prod-info">
                     <span class="prod-name">Docente Ingles</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573149434777">
                 <div class="prod-info">
                     <span class="prod-name">tutorias en investigación</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573149434777">
                 <div class="prod-info">
                     <span class="prod-name">Traducción e interpretación</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
@@ -639,7 +634,7 @@ footer p{ color:#888; }
                 <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
                 Acepta <span>ᚲᚺᛁ</span>
             </div>
-            <a href="https://wa.me/573149434777" class="btn-wa" target="_blank">
+            <a href="#" class="btn-wa" data-wa="573149434777" data-store="Dr. Daniel Perez" target="_blank">
                 <i class="fab fa-whatsapp"></i> Contactar
             </a>
         </div>
@@ -652,11 +647,10 @@ footer p{ color:#888; }
     <div class="comercio-banner banner-5">
         <div class="banner-logo-row">
             <div class="comercio-logo">
-                <!--<i class="fa-solid fa-palette"></i>-->
                 <i class="fa-solid fa-heart-pulse"></i>
             </div>
             <div>
-                <div class="banner-name">Vioplanet</div>
+                <div class="banner-name">Bioplanet</div>
                 <div class="banner-category">Espiritualidad y bienestar para plantas</div>
             </div>
         </div>
@@ -672,28 +666,28 @@ footer p{ color:#888; }
             </button>
         </div>
         <ul class="productos-list">
-            <li class="prod-item">
+            <li class="prod-item" data-wa="">
                 <div class="prod-info">
                     <span class="prod-name">Alimento para plantas</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="">
                 <div class="prod-info">
                     <span class="prod-name">Constelaciones</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="">
                 <div class="prod-info">
                     <span class="prod-name">Tarod</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="">
                 <div class="prod-info">
                     <span class="prod-name">Psicoanálisis</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
@@ -706,7 +700,7 @@ footer p{ color:#888; }
                 <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
                 Acepta <span>ᚲᚺᛁ</span>
             </div>
-            <a href="https://wa.me/57XXXXXXXXXX" class="btn-wa" target="_blank">
+            <a href="#" class="btn-wa" data-wa="" data-store="Bioplanet" target="_blank">
                 <i class="fab fa-whatsapp"></i> Contactar
             </a>
         </div>
@@ -738,28 +732,28 @@ footer p{ color:#888; }
             </button>
         </div>
         <ul class="productos-list">
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573142891385">
                 <div class="prod-info">
                     <span class="prod-name">Articulos personalizados</span>
                     <span class="prod-desc">Personalizamos camisetas, hoodies, gorras, tote bags y otras prendas con diseños exclusivos, ideales para marcas, empresas, eventos o uso personal..</span>
                     <span class="prod-price">desde $35.000 COP unidad y $25.000 por mayor<span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573142891385">
                 <div class="prod-info">
                     <span class="prod-name">Estamapdo de tus prendas</span>
                     <span class="prod-desc">Personalizamos tus prendas con el diseño que traigas o te ayudamos a diseñarlo.</span>
                     <span class="prod-price">desde $10.000 COP depende del tamaño <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573142891385">
                 <div class="prod-info">
                     <span class="prod-name">Termos personalizados</span>
                     <span class="prod-desc">Termos personalizados con nombres, logos o diseños exclusivos, ideales para regalos corporativos, eventos o uso personal..</span>
                     <span class="prod-price">Desde $25.000 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="573142891385">
                 <div class="prod-info">
                     <span class="prod-name">Stickers personalizados</span>
                     <span class="prod-desc">Stickers en diferentes tamaños y acabados, ideales para branding, decoración, empaques, computadores, botellas y mucho más..</span>
@@ -772,7 +766,7 @@ footer p{ color:#888; }
                 <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
                 Acepta <span>ᚲᚺᛁ</span>
             </div>
-            <a href="https://wa.me/573142891385" class="btn-wa" target="_blank">
+            <a href="#" class="btn-wa" data-wa="573142891385" data-store="alma de colores" target="_blank">
                 <i class="fab fa-whatsapp"></i> Contactar
             </a>
         </div>
@@ -805,35 +799,35 @@ footer p{ color:#888; }
             </button>
         </div>
         <ul class="productos-list">
-            <li class="prod-item">
+            <li class="prod-item" data-wa="">
                 <div class="prod-info">
                     <span class="prod-name">Nombre Producto 1</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="">
                 <div class="prod-info">
                     <span class="prod-name">Nombre Producto 2</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="">
                 <div class="prod-info">
                     <span class="prod-name">Nombre Producto 3</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="">
                 <div class="prod-info">
                     <span class="prod-name">Nombre Producto 4</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
                     <span class="prod-price">$0 COP <span class="chi-label">· acepta ᚲᚺᛁ</span></span>
                 </div>
             </li>
-            <li class="prod-item">
+            <li class="prod-item" data-wa="">
                 <div class="prod-info">
                     <span class="prod-name">Nombre Producto 5</span>
                     <span class="prod-desc">Descripción corta del producto.</span>
@@ -846,7 +840,7 @@ footer p{ color:#888; }
                 <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
                 Acepta <span>ᚲᚺᛁ</span>
             </div>
-            <a href="https://wa.me/57XXXXXXXXXX" class="btn-wa" target="_blank">
+            <a href="#" class="btn-wa" data-wa="" data-store="Nombre Comercio 7" target="_blank">
                 <i class="fab fa-whatsapp"></i> Contactar
             </a>
         </div>
@@ -870,7 +864,6 @@ footer p{ color:#888; }
 <script>
 function toggleProductos(btn) {
     const lista = btn.closest('.comercio-body').querySelector('.productos-list');
-    const icono = btn.querySelector('i');
     const abierto = lista.classList.toggle('open');
     btn.innerHTML = abierto
         ? '<i class="fa-solid fa-chevron-up"></i> Ocultar'
@@ -883,6 +876,44 @@ document.getElementById('searchInput').addEventListener('input', function(){
     document.querySelectorAll('.comercio-card').forEach(card => {
         card.style.display = card.innerText.toLowerCase().includes(q) ? 'flex' : 'none';
     });
+});
+
+// ===== Mensaje automático de WhatsApp =====
+// Botón principal "Contactar": mensaje genérico con el nombre del comercio
+document.querySelectorAll('.btn-wa[data-wa]').forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        const numero = this.dataset.wa;
+        const comercio = this.dataset.store || '';
+        if(!numero){
+            alert('Este comercio aún no tiene número de WhatsApp configurado.');
+            return;
+        }
+        const mensaje = `Hola ${comercio}, te escribo desde la página del proyecto ᚲᚺᛁ. Estoy interesado/a en los productos de tu comercio, ¿me puedes dar más información?`;
+        window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
+    });
+});
+
+// Botón individual por producto: mensaje mencionando el producto específico
+document.querySelectorAll('.prod-item[data-wa]').forEach(item => {
+    const numero = item.dataset.wa;
+    if(!numero) return; // comercio sin whatsapp aún
+
+    const nombreProducto = item.querySelector('.prod-name')?.textContent.trim() || 'este producto';
+    const card = item.closest('.comercio-card');
+    const comercio = card ? card.querySelector('.banner-name')?.textContent.trim() : '';
+
+    const infoDiv = item.querySelector('.prod-info');
+    const enlace = document.createElement('a');
+    enlace.href = '#';
+    enlace.className = 'prod-wa';
+    enlace.innerHTML = '<i class="fab fa-whatsapp"></i> Preguntar por este producto';
+    enlace.addEventListener('click', function(e){
+        e.preventDefault();
+        const mensaje = `Hola ${comercio}, vi "${nombreProducto}" en la página de comercios aliados ᚲᚺᛁ y estoy interesado/a. ¿Me das más información?`;
+        window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
+    });
+    infoDiv.appendChild(enlace);
 });
 </script>
 <script>
