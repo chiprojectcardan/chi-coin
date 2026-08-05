@@ -8,9 +8,9 @@
       "whatsapp": "573194397573",
       "descripcion": "Productor elbaorados con flores canabicas , que ayudan a la salud de nuestra comunidad para diferentes momentos de la vida ᚲᚺᛁ.",
       "productos": [
-        { "nombre": "Cream quita dolor", "descripcion": "Descripción corta del producto, materiales, uso o beneficio.", "precio": "$20.000 COP" },
-        { "nombre": "Nombre Producto 2", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
-        { "nombre": "Nombre Producto 3", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Crema quita dolor", "descripcion": "Descripción corta del producto, materiales, uso o beneficio.", "precio": "$20.000 COP" },
+        { "nombre": "Satimed", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
+        { "nombre": "Satimed pets", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
         { "nombre": "Nombre Producto 4", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" },
         { "nombre": "Nombre Producto 5", "descripcion": "Descripción corta del producto.", "precio": "$0 COP" }
       ]
